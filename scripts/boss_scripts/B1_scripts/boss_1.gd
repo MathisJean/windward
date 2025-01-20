@@ -3,8 +3,15 @@ extends BossClass
 
 
 func _physics_process(delta):
-	# gravity
-	#if not is_on_floor():
-	#	velocity += get_gravity() * delta
+	if velocity.x >= 0:
+		$Sprites.scale.x = -1
+
+	else:
+		$Sprites.scale.x = 1
+
+
 
 	move_and_slide()
+
+
+	

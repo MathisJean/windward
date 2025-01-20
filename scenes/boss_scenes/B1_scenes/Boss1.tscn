@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://7e88njjjcuj"]
+[gd_scene load_steps=10 format=3 uid="uid://7e88njjjcuj"]
 
 [ext_resource type="Texture2D" uid="uid://ms2r5je4vh3k" path="res://assets/boss_assets/boss_1_assets/boss_levitate.png" id="1_rsk3a"]
 [ext_resource type="Script" path="res://scripts/boss_scripts/B1_scripts/boss_1.gd" id="1_t0c1c"]
@@ -6,15 +6,26 @@
 [ext_resource type="Texture2D" uid="uid://1a4tvjf5l0wd" path="res://assets/boss_assets/boss_1_assets/boos_chest.png" id="2_acow0"]
 [ext_resource type="Texture2D" uid="uid://b88mx4bsyvxhj" path="res://assets/boss_assets/boss_1_assets/B1head.png" id="3_l8n2a"]
 [ext_resource type="Script" path="res://scripts/boss_scripts/B1_scripts/B1FollowState.gd" id="5_crtv5"]
+[ext_resource type="Script" path="res://scenes/boss_scenes/B1_scenes/B1AttackState.gd" id="7_3ve3d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pvjpt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j1iq3"]
 
 [node name="Boss1" type="CharacterBody2D" groups=["BossGroup"]]
 script = ExtResource("1_t0c1c")
 
+[node name="AggroArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AggroArea"]
+position = Vector2(-5.96046e-08, -12)
+scale = Vector2(4.00727, -1.85746)
+shape = SubResource("RectangleShape2D_pvjpt")
+debug_color = Color(0.989945, 0, 0.284376, 0.42)
+
 [node name="Sprites" type="Node2D" parent="."]
 
-[node name="BossLevitate" type="Sprite2D" parent="Sprites" groups=["BossGroup"]]
+[node name="BossLevitate" type="Sprite2D" parent="Sprites"]
 position = Vector2(0, 5)
 texture = ExtResource("1_rsk3a")
 
@@ -36,3 +47,15 @@ initial_state = NodePath("Follow")
 
 [node name="Follow" type="Node" parent="StateMachine"]
 script = ExtResource("5_crtv5")
+
+[node name="Attack" type="Node" parent="StateMachine"]
+script = ExtResource("7_3ve3d")
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="AttackCooldown" type="Timer" parent="Timers"]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="body_entered" from="AggroArea" to="StateMachine/Follow" method="_on_aggro_area_body_entered"]
+[connection signal="timeout" from="Timers/AttackCooldown" to="StateMachine/Attack" method="_on_attack_cooldown_timeout"]

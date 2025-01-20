@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://csvaeob7hy5tn"]
+
+[node name="hud" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+anchor_left = 0.0390625
+anchor_top = 0.0694444
+anchor_right = 0.273438
+anchor_bottom = 0.15
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerHealthBar" type="ProgressBar" parent="Control/PlayerContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+value = 100.0
+
+[node name="PlayerStaminaBar" type="ProgressBar" parent="Control/PlayerContainer"]
+layout_mode = 2
+value = 100.0
+
+[node name="Boss1Container" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.484375
+anchor_top = 0.833333
+anchor_right = 0.515625
+anchor_bottom = 0.888889
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control/Boss1Container"]
+layout_mode = 2
+text = "Boss1"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Control/Boss1Container"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+value = 100.0

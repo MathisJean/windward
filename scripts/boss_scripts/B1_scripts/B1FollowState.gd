@@ -18,6 +18,12 @@ func FollowPlayer():
 		pass
 func update(_delta: float):
 	FollowPlayer()
+	exit()
 
 func exit():
 	pass
+
+
+func _on_aggro_area_body_entered(body):
+	if body.is_in_group("PlayerGroup"):
+		BossTransition.emit(self, "Attack")

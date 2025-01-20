@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://7e88njjjcuj"]
+
+[ext_resource type="Texture2D" uid="uid://ms2r5je4vh3k" path="res://assets/boss_assets/boss_1_assets/boss_levitate.png" id="1_rsk3a"]
+[ext_resource type="Script" path="res://scripts/boss_scripts/B1_scripts/boss_1.gd" id="1_t0c1c"]
+[ext_resource type="Script" path="res://scripts/boss_scripts/B1_scripts/B1StateMachine.gd" id="1_tnrt2"]
+[ext_resource type="Texture2D" uid="uid://1a4tvjf5l0wd" path="res://assets/boss_assets/boss_1_assets/boos_chest.png" id="2_acow0"]
+[ext_resource type="Texture2D" uid="uid://b88mx4bsyvxhj" path="res://assets/boss_assets/boss_1_assets/B1head.png" id="3_l8n2a"]
+[ext_resource type="Script" path="res://scripts/boss_scripts/B1_scripts/B1FollowState.gd" id="5_crtv5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j1iq3"]
+
+[node name="Boss1" type="CharacterBody2D" groups=["BossGroup"]]
+script = ExtResource("1_t0c1c")
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="BossLevitate" type="Sprite2D" parent="Sprites" groups=["BossGroup"]]
+position = Vector2(0, 5)
+texture = ExtResource("1_rsk3a")
+
+[node name="BoosChest" type="Sprite2D" parent="Sprites"]
+position = Vector2(-1, -13)
+texture = ExtResource("2_acow0")
+
+[node name="B1Head" type="Sprite2D" parent="Sprites"]
+position = Vector2(-2, -22)
+texture = ExtResource("3_l8n2a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -8)
+shape = SubResource("CapsuleShape2D_j1iq3")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("1_tnrt2")
+initial_state = NodePath("Follow")
+
+[node name="Follow" type="Node" parent="StateMachine"]
+script = ExtResource("5_crtv5")

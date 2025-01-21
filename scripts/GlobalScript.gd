@@ -1,4 +1,7 @@
 extends Node
+#gonna debug player and boss health in this to avoid headache
+#should change it later on
+
 
 
 # Called when the node enters the scene tree for the first time.

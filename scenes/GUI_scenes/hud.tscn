@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://csvaeob7hy5tn"]
+[gd_scene load_steps=2 format=3 uid="uid://csvaeob7hy5tn"]
+
+[ext_resource type="Script" path="res://scripts/GUI_scripts/hud.gd" id="1_4t51g"]
 
 [node name="hud" type="CanvasLayer"]
+script = ExtResource("1_4t51g")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -38,12 +41,12 @@ grow_horizontal = 2
 grow_vertical = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Control/Boss1Container"]
+[node name="B1Label" type="Label" parent="Control/Boss1Container"]
 layout_mode = 2
 text = "Boss1"
 horizontal_alignment = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="Control/Boss1Container"]
+[node name="B1HealthBar" type="ProgressBar" parent="Control/Boss1Container"]
 custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
 value = 100.0

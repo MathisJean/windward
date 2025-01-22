@@ -7,6 +7,7 @@ var Speed = 0.5
 func enter():
 	PlayerRef = get_tree().get_first_node_in_group("PlayerGroup")
 	BossRef = get_tree().get_first_node_in_group("BossGroup")
+	$"../../SwordAnimationPlayer".play("idle_sword")
 	
 func FollowPlayer():
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=156 format=3 uid="uid://d3bx3tabdk11c"]
+[gd_scene load_steps=166 format=3 uid="uid://d3bx3tabdk11c"]
 
 [ext_resource type="Script" path="res://scripts/character_scripts/player.gd" id="1_qnkkk"]
 [ext_resource type="Texture2D" uid="uid://bbbg1t74h00e" path="res://assets/character_assets/temps_asset_packs_spliced/player_sword_idle/player_sword_idle_lower.png" id="2_i8nnv"]
@@ -16,7 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://cifm4osgyhycs" path="res://assets/character_assets/temps_asset_packs_spliced/player_sword_crouch_walk/player_sword_crouch_walk_upper.png" id="15_csmec"]
 [ext_resource type="Texture2D" uid="uid://mhbiaklr8n2n" path="res://assets/character_assets/temps_asset_packs_spliced/player_sword_crouch_walk/player_sword_crouch_walk_lower.png" id="16_0ri2s"]
 [ext_resource type="Script" path="res://scripts/character_scripts/animation_tree.gd" id="17_14oga"]
+[ext_resource type="Texture2D" uid="uid://d0gd5awbh2fc1" path="res://assets/character_assets/temps_asset_packs_spliced/player_sword_wallslide/player_sword_wallslide_lower.png" id="17_27oy2"]
 [ext_resource type="Texture2D" uid="uid://dvu3m3orygmtt" path="res://assets/character_assets/temps_asset_packs_spliced/player_sword_run/player_sword_run_lower.png" id="17_uog4k"]
+[ext_resource type="Texture2D" uid="uid://bbuxurohkbwdj" path="res://assets/character_assets/temps_asset_packs_spliced/player_sword_wallslide/player_sword_wallslide_upper.png" id="17_xr1a2"]
 [ext_resource type="Script" path="res://scripts/character_scripts/states/state_machine.gd" id="25_yqogn"]
 [ext_resource type="Script" path="res://scripts/character_scripts/states/idle_state.gd" id="26_cpcjb"]
 [ext_resource type="Script" path="res://scripts/character_scripts/states/run_state.gd" id="27_i6672"]
@@ -143,6 +145,170 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [8]
+}
+
+[sub_resource type="Animation" id="Animation_6bm5c"]
+resource_name = "crouch_idle_lower"
+loop_mode = 1
+step = 0.0333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player_lower_body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.8991),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("player_lower_body:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("13_1o4ti")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("player_lower_body:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
+}
+
+[sub_resource type="Animation" id="Animation_i262l"]
+resource_name = "crouch_idle_upper"
+loop_mode = 1
+step = 0.0333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player_upper_body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.7992, 0.8991),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("player_upper_body:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("14_4c7uo")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("player_upper_body:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
+}
+
+[sub_resource type="Animation" id="Animation_hs6kb"]
+resource_name = "crouch_walk_lower"
+loop_mode = 1
+step = 0.0333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player_lower_body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.8991),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("player_lower_body:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("16_0ri2s")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("player_lower_body:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
+}
+
+[sub_resource type="Animation" id="Animation_hie3n"]
+resource_name = "crouch_walk_upper"
+loop_mode = 1
+step = 0.0333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player_upper_body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.7992, 0.8991),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("player_upper_body:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("15_csmec")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("player_upper_body:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
 }
 
 [sub_resource type="Animation" id="Animation_30aam"]
@@ -721,49 +887,9 @@ tracks/2/keys = {
 "values": [8]
 }
 
-[sub_resource type="Animation" id="Animation_6bm5c"]
-resource_name = "crouch_idle_lower"
-loop_mode = 1
-step = 0.0333
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("player_lower_body:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.8991),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("player_lower_body:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("13_1o4ti")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("player_lower_body:hframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [10]
-}
-
-[sub_resource type="Animation" id="Animation_i262l"]
-resource_name = "crouch_idle_upper"
+[sub_resource type="Animation" id="Animation_htegj"]
+resource_name = "wallslide_upper"
+length = 0.1
 loop_mode = 1
 step = 0.0333
 tracks/0/type = "value"
@@ -773,10 +899,10 @@ tracks/0/path = NodePath("player_upper_body:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.7992, 0.8991),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+"values": [1]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -788,7 +914,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("14_4c7uo")]
+"values": [ExtResource("17_xr1a2")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -800,52 +926,12 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [10]
+"values": [3]
 }
 
-[sub_resource type="Animation" id="Animation_hie3n"]
-resource_name = "crouch_walk_upper"
-loop_mode = 1
-step = 0.0333
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("player_upper_body:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.7992, 0.8991),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("player_upper_body:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("15_csmec")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("player_upper_body:hframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [10]
-}
-
-[sub_resource type="Animation" id="Animation_hs6kb"]
-resource_name = "crouch_walk_lower"
+[sub_resource type="Animation" id="Animation_8d8c1"]
+resource_name = "wallslide_lower"
+length = 0.1
 loop_mode = 1
 step = 0.0333
 tracks/0/type = "value"
@@ -855,10 +941,10 @@ tracks/0/path = NodePath("player_lower_body:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.8991),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+"values": [1]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -870,7 +956,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("16_0ri2s")]
+"values": [ExtResource("17_27oy2")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -882,7 +968,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [10]
+"values": [3]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7ywj2"]
@@ -906,7 +992,9 @@ _data = {
 "jump_up_lower": SubResource("Animation_5huln"),
 "jump_up_upper": SubResource("Animation_ecv32"),
 "run_lower": SubResource("Animation_0r3py"),
-"run_upper": SubResource("Animation_m7akd")
+"run_upper": SubResource("Animation_m7akd"),
+"wallslide_lower": SubResource("Animation_8d8c1"),
+"wallslide_upper": SubResource("Animation_htegj")
 }
 
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_bq8b7"]
@@ -1125,9 +1213,41 @@ nodes/UpperAnimation/node = SubResource("AnimationNodeAnimation_id8j5")
 nodes/UpperAnimation/position = Vector2(-260, -20)
 node_connections = [&"Attack", 0, &"UpperAnimation", &"Attack", 1, &"AttackAnimation", &"UpperAndLower", 0, &"Attack", &"UpperAndLower", 1, &"LowerAnimation", &"output", 0, &"UpperAndLower"]
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tovij"]
+animation = &"wallslide_lower"
+
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_o7msl"]
+filters = ["player_lower_body:frame", "player_lower_body:hframes", "player_lower_body:texture"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tvl57"]
+animation = &"wallslide_upper"
+
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_vprue"]
+graph_offset = Vector2(-209, -91)
+nodes/LowerAnimation/node = SubResource("AnimationNodeAnimation_tovij")
+nodes/LowerAnimation/position = Vector2(-140, 200)
+nodes/UpperAndLower/node = SubResource("AnimationNodeAdd2_o7msl")
+nodes/UpperAndLower/position = Vector2(140, 80)
+nodes/UpperAnimation/node = SubResource("AnimationNodeAnimation_tvl57")
+nodes/UpperAnimation/position = Vector2(-140, 60)
+node_connections = [&"UpperAndLower", 0, &"UpperAnimation", &"UpperAndLower", 1, &"LowerAnimation", &"output", 0, &"UpperAndLower"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_coj7r"]
+
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_6g27y"]
+filters = ["player_lower_body:frame", "player_lower_body:hframes", "player_lower_body:texture"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2ylch"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_y4jth"]
+graph_offset = Vector2(-550.758, 5.3801)
+nodes/LowerAnimation/node = SubResource("AnimationNodeAnimation_coj7r")
+nodes/LowerAnimation/position = Vector2(-100, 200)
+nodes/UpperAndLower/node = SubResource("AnimationNodeAdd2_6g27y")
+nodes/UpperAndLower/position = Vector2(100, 80)
+nodes/UpperAnimation/node = SubResource("AnimationNodeAnimation_2ylch")
+nodes/UpperAnimation/position = Vector2(-100, 20)
+node_connections = [&"UpperAndLower", 0, &"UpperAnimation", &"UpperAndLower", 1, &"LowerAnimation", &"output", 0, &"UpperAndLower"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2ugx4"]
 advance_mode = 2
@@ -1195,9 +1315,9 @@ states/Start/position = Vector2(-1, 516)
 states/WallSlide/node = SubResource("AnimationNodeBlendTree_vprue")
 states/WallSlide/position = Vector2(-1, 633.328)
 states/WallSlideLanding/node = SubResource("AnimationNodeBlendTree_y4jth")
-states/WallSlideLanding/position = Vector2(0, 724.328)
+states/WallSlideLanding/position = Vector2(-1, 724.328)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_2ugx4"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_ru4n7"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_ijp1r"), "Idle", "End", SubResource("AnimationNodeStateMachineTransition_dnwtm"), "WallSlideLanding", "WallSlide", SubResource("AnimationNodeStateMachineTransition_5glne"), "WallSlide", "Idle", SubResource("AnimationNodeStateMachineTransition_mw4mf"), "Idle", "CrouchIdle", SubResource("AnimationNodeStateMachineTransition_4b31i"), "CrouchIdle", "Idle", SubResource("AnimationNodeStateMachineTransition_hf3ms"), "CrouchIdle", "CrouchRun", SubResource("AnimationNodeStateMachineTransition_1m8un"), "CrouchRun", "CrouchIdle", SubResource("AnimationNodeStateMachineTransition_7d838"), "CrouchRun", "Run", SubResource("AnimationNodeStateMachineTransition_cepvt"), "Run", "CrouchRun", SubResource("AnimationNodeStateMachineTransition_ww2hp"), "Idle", "Dash", SubResource("AnimationNodeStateMachineTransition_bdqgl"), "Dash", "Run", SubResource("AnimationNodeStateMachineTransition_ti2gb"), "Run", "Dash", SubResource("AnimationNodeStateMachineTransition_euohk"), "Dash", "Idle", SubResource("AnimationNodeStateMachineTransition_1bm6w"), "Idle", "Air", SubResource("AnimationNodeStateMachineTransition_pfkpy"), "Air", "Idle", SubResource("AnimationNodeStateMachineTransition_toikb"), "Air", "WallSlideLanding", SubResource("AnimationNodeStateMachineTransition_n8p8g"), "WallSlideLanding", "Air", SubResource("AnimationNodeStateMachineTransition_2w7ok"), "Air", "DoubleJump", SubResource("AnimationNodeStateMachineTransition_yh6v6"), "DoubleJump", "Air", SubResource("AnimationNodeStateMachineTransition_c217o")]
-graph_offset = Vector2(-129, 267.328)
+graph_offset = Vector2(-228, 514.492)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kx3ht"]
 animation = &"CrouchIdle"
@@ -1334,7 +1454,7 @@ texture_filter = 1
 position = Vector2(0, -16)
 texture = ExtResource("3_u0wdv")
 hframes = 10
-frame = 4
+frame = 1
 
 [node name="animation_player" type="AnimationPlayer" parent="."]
 libraries = {
@@ -1368,6 +1488,8 @@ parameters/Run/Attack/active = false
 parameters/Run/Attack/internal_active = false
 parameters/Run/Attack/request = 0
 parameters/Run/UpperAndLower/add_amount = 1.0
+parameters/WallSlide/UpperAndLower/add_amount = 1.0
+parameters/WallSlideLanding/UpperAndLower/add_amount = 1.0
 script = ExtResource("17_14oga")
 
 [node name="temps" type="AnimationTree" parent="."]

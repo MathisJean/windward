@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b52ofa38wwy4u"
-path="res://.godot/imported/Player Wall Land (left) 48x48.png-bc866db05684217d1d22e85f2ad2decb.ctex"
+uid="uid://bbuxurohkbwdj"
+path="res://.godot/imported/player_sword_wallslide_upper.png-975da82dbf039001ad01a066ac88172c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character_assets/temps_asset_packs_spliced/player_sword_wall_land/Player Wall Land (left) 48x48.png"
-dest_files=["res://.godot/imported/Player Wall Land (left) 48x48.png-bc866db05684217d1d22e85f2ad2decb.ctex"]
+source_file="res://assets/character_assets/temps_asset_packs_spliced/player_sword_wallslide/player_sword_wallslide_upper.png"
+dest_files=["res://.godot/imported/player_sword_wallslide_upper.png-975da82dbf039001ad01a066ac88172c.ctex"]
 
 [params]
 

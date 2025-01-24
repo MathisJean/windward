@@ -17,6 +17,10 @@ func Physics_Update(_delta: float):
 
 	player.velocity.x = 0 #No movement for idle state
 	
+	#Attack Animation
+	if Input.is_action_just_pressed("primary_attack"):
+		animation_tree.set("parameters/CrouchIdle/Attack/request", 1)
+	
 	#---Exit Crouch Idle state---
 	#Crouch Idle -> Air
 	if !player.is_on_floor():

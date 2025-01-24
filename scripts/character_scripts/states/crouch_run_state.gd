@@ -17,6 +17,10 @@ func Physics_Update(_delta: float):
 	
 	player.velocity.x = player.SPEED * direction * player.CROUCH_SPEED_MULTIPLIER
 	
+	#Attack Animation
+	if Input.is_action_just_pressed("primary_attack"):
+		animation_tree.set("parameters/CrouchRun/Attack/request", 1)
+	
 	#---Exit Crouch Idle state---
 	#Crouch Run -> Air
 	if !player.is_on_floor():

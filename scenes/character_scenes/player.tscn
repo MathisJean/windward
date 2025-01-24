@@ -1,4 +1,4 @@
-[gd_scene load_steps=138 format=3 uid="uid://d3bx3tabdk11c"]
+[gd_scene load_steps=156 format=3 uid="uid://d3bx3tabdk11c"]
 
 [ext_resource type="Script" path="res://scripts/character_scripts/player.gd" id="1_qnkkk"]
 [ext_resource type="Texture2D" uid="uid://bbbg1t74h00e" path="res://assets/character_assets/temps_asset_packs_spliced/player_sword_idle/player_sword_idle_lower.png" id="2_i8nnv"]
@@ -10,7 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://ntv6dj1oxi1g" path="res://assets/character_assets/temps_asset_packs_spliced/player_sword_double_jump/player_sword_double_jump_lower.png" id="9_85bix"]
 [ext_resource type="Texture2D" uid="uid://bmanw2ukwnt4i" path="res://assets/character_assets/temps_asset_packs_spliced/player_sword_run/player_sword_run_upper.png" id="9_ojadx"]
 [ext_resource type="Texture2D" uid="uid://37838ur401sb" path="res://assets/character_assets/temps_asset_packs_spliced/player_sword_dash/player_sword_dash_lower.png" id="12_dq10b"]
+[ext_resource type="Texture2D" uid="uid://gjvaswmkblps" path="res://assets/character_assets/temps_asset_packs_spliced/player_sword_crouch_idle/player_sword_crouch_idle_lower.png" id="13_1o4ti"]
 [ext_resource type="Texture2D" uid="uid://dpd5wjrq14uhp" path="res://assets/character_assets/temps_asset_packs_spliced/player_sword_attack/player_sword_attack.png" id="13_kqhxb"]
+[ext_resource type="Texture2D" uid="uid://cswuw1cmxks55" path="res://assets/character_assets/temps_asset_packs_spliced/player_sword_crouch_idle/player_sword_crouch_idle_upper.png" id="14_4c7uo"]
+[ext_resource type="Texture2D" uid="uid://cifm4osgyhycs" path="res://assets/character_assets/temps_asset_packs_spliced/player_sword_crouch_walk/player_sword_crouch_walk_upper.png" id="15_csmec"]
+[ext_resource type="Texture2D" uid="uid://mhbiaklr8n2n" path="res://assets/character_assets/temps_asset_packs_spliced/player_sword_crouch_walk/player_sword_crouch_walk_lower.png" id="16_0ri2s"]
 [ext_resource type="Script" path="res://scripts/character_scripts/animation_tree.gd" id="17_14oga"]
 [ext_resource type="Texture2D" uid="uid://dvu3m3orygmtt" path="res://assets/character_assets/temps_asset_packs_spliced/player_sword_run/player_sword_run_lower.png" id="17_uog4k"]
 [ext_resource type="Script" path="res://scripts/character_scripts/states/state_machine.gd" id="25_yqogn"]
@@ -717,10 +721,178 @@ tracks/2/keys = {
 "values": [8]
 }
 
+[sub_resource type="Animation" id="Animation_6bm5c"]
+resource_name = "crouch_idle_lower"
+loop_mode = 1
+step = 0.0333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player_lower_body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.8991),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("player_lower_body:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("13_1o4ti")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("player_lower_body:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
+}
+
+[sub_resource type="Animation" id="Animation_i262l"]
+resource_name = "crouch_idle_upper"
+loop_mode = 1
+step = 0.0333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player_upper_body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.7992, 0.8991),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("player_upper_body:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("14_4c7uo")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("player_upper_body:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
+}
+
+[sub_resource type="Animation" id="Animation_hie3n"]
+resource_name = "crouch_walk_upper"
+loop_mode = 1
+step = 0.0333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player_upper_body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.7992, 0.8991),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("player_upper_body:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("15_csmec")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("player_upper_body:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
+}
+
+[sub_resource type="Animation" id="Animation_hs6kb"]
+resource_name = "crouch_walk_lower"
+loop_mode = 1
+step = 0.0333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player_lower_body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.8991),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("player_lower_body:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("16_0ri2s")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("player_lower_body:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7ywj2"]
 _data = {
 "RESET": SubResource("Animation_ug01x"),
 "attack_upper": SubResource("Animation_kl1cv"),
+"crouch_idle_lower": SubResource("Animation_6bm5c"),
+"crouch_idle_upper": SubResource("Animation_i262l"),
+"crouch_walk_lower": SubResource("Animation_hs6kb"),
+"crouch_walk_upper": SubResource("Animation_hie3n"),
 "dash_lower": SubResource("Animation_30aam"),
 "dash_upper": SubResource("Animation_s1u5s"),
 "double_jump_lower": SubResource("Animation_1vg06"),
@@ -797,9 +969,63 @@ nodes/UpperAnimations/node = SubResource("AnimationNodeBlendSpace1D_wdqbd")
 nodes/UpperAnimations/position = Vector2(-320, -120)
 node_connections = [&"Attack", 0, &"UpperAnimations", &"Attack", 1, &"AttackAnimation", &"UpperAndLower", 0, &"Attack", &"UpperAndLower", 1, &"LowerAnimations", &"output", 0, &"UpperAndLower"]
 
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_1gaay"]
+sync = true
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bg01a"]
+animation = &"attack_upper"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vahhi"]
+animation = &"crouch_idle_lower"
+
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_jvelc"]
+filters = ["player_lower_body:frame", "player_lower_body:hframes", "player_lower_body:texture"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mdflk"]
+animation = &"crouch_idle_upper"
+
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_npnvi"]
+graph_offset = Vector2(-350.636, -160.818)
+nodes/Attack/node = SubResource("AnimationNodeOneShot_1gaay")
+nodes/Attack/position = Vector2(-40, 0)
+nodes/AttackAnimation/node = SubResource("AnimationNodeAnimation_bg01a")
+nodes/AttackAnimation/position = Vector2(-220, 100)
+nodes/LowerAnimation/node = SubResource("AnimationNodeAnimation_vahhi")
+nodes/LowerAnimation/position = Vector2(-80, 260)
+nodes/UpperAndLower/node = SubResource("AnimationNodeAdd2_jvelc")
+nodes/UpperAndLower/position = Vector2(120, 100)
+nodes/UpperAnimation/node = SubResource("AnimationNodeAnimation_mdflk")
+nodes/UpperAnimation/position = Vector2(-260, -40)
+node_connections = [&"Attack", 0, &"UpperAnimation", &"Attack", 1, &"AttackAnimation", &"UpperAndLower", 0, &"Attack", &"UpperAndLower", 1, &"LowerAnimation", &"output", 0, &"UpperAndLower"]
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_qbcbx"]
+sync = true
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pni8m"]
+animation = &"attack_upper"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uowde"]
+animation = &"crouch_walk_lower"
+
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_vnupj"]
+filters = ["player_lower_body:frame", "player_lower_body:hframes", "player_lower_body:texture"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_asw8n"]
+animation = &"crouch_walk_upper"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_0kmkd"]
+graph_offset = Vector2(-371, -39)
+nodes/Attack/node = SubResource("AnimationNodeOneShot_qbcbx")
+nodes/Attack/position = Vector2(-80, 0)
+nodes/AttackAnimation/node = SubResource("AnimationNodeAnimation_pni8m")
+nodes/AttackAnimation/position = Vector2(-260, 120)
+nodes/LowerAnimation/node = SubResource("AnimationNodeAnimation_uowde")
+nodes/LowerAnimation/position = Vector2(-140, 260)
+nodes/UpperAndLower/node = SubResource("AnimationNodeAdd2_vnupj")
+nodes/UpperAndLower/position = Vector2(100, 100)
+nodes/UpperAnimation/node = SubResource("AnimationNodeAnimation_asw8n")
+nodes/UpperAnimation/position = Vector2(-300, -20)
+node_connections = [&"Attack", 0, &"UpperAnimation", &"Attack", 1, &"AttackAnimation", &"UpperAndLower", 0, &"Attack", &"UpperAndLower", 1, &"LowerAnimation", &"output", 0, &"UpperAndLower"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_41vxq"]
 animation = &"dash_lower"
@@ -811,7 +1037,7 @@ filters = ["player_lower_body:frame", "player_lower_body:hframes", "player_lower
 animation = &"dash_upper"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_bamcg"]
-graph_offset = Vector2(-513, -14)
+graph_offset = Vector2(-509, -299)
 nodes/LowerAnimation/node = SubResource("AnimationNodeAnimation_41vxq")
 nodes/LowerAnimation/position = Vector2(-80, 200)
 nodes/UpperAndLower/node = SubResource("AnimationNodeAdd2_uad5c")
@@ -856,7 +1082,7 @@ filters = ["player_lower_body:frame", "player_lower_body:hframes", "player_lower
 animation = &"idle_upper"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_fulgx"]
-graph_offset = Vector2(-183.867, 105.983)
+graph_offset = Vector2(-187.867, -49.017)
 nodes/Attack/node = SubResource("AnimationNodeOneShot_4an3l")
 nodes/Attack/position = Vector2(280, 140)
 nodes/AttackAnimation/node = SubResource("AnimationNodeAnimation_o6qhp")
@@ -971,7 +1197,7 @@ states/WallSlide/position = Vector2(-1, 633.328)
 states/WallSlideLanding/node = SubResource("AnimationNodeBlendTree_y4jth")
 states/WallSlideLanding/position = Vector2(0, 724.328)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_2ugx4"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_ru4n7"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_ijp1r"), "Idle", "End", SubResource("AnimationNodeStateMachineTransition_dnwtm"), "WallSlideLanding", "WallSlide", SubResource("AnimationNodeStateMachineTransition_5glne"), "WallSlide", "Idle", SubResource("AnimationNodeStateMachineTransition_mw4mf"), "Idle", "CrouchIdle", SubResource("AnimationNodeStateMachineTransition_4b31i"), "CrouchIdle", "Idle", SubResource("AnimationNodeStateMachineTransition_hf3ms"), "CrouchIdle", "CrouchRun", SubResource("AnimationNodeStateMachineTransition_1m8un"), "CrouchRun", "CrouchIdle", SubResource("AnimationNodeStateMachineTransition_7d838"), "CrouchRun", "Run", SubResource("AnimationNodeStateMachineTransition_cepvt"), "Run", "CrouchRun", SubResource("AnimationNodeStateMachineTransition_ww2hp"), "Idle", "Dash", SubResource("AnimationNodeStateMachineTransition_bdqgl"), "Dash", "Run", SubResource("AnimationNodeStateMachineTransition_ti2gb"), "Run", "Dash", SubResource("AnimationNodeStateMachineTransition_euohk"), "Dash", "Idle", SubResource("AnimationNodeStateMachineTransition_1bm6w"), "Idle", "Air", SubResource("AnimationNodeStateMachineTransition_pfkpy"), "Air", "Idle", SubResource("AnimationNodeStateMachineTransition_toikb"), "Air", "WallSlideLanding", SubResource("AnimationNodeStateMachineTransition_n8p8g"), "WallSlideLanding", "Air", SubResource("AnimationNodeStateMachineTransition_2w7ok"), "Air", "DoubleJump", SubResource("AnimationNodeStateMachineTransition_yh6v6"), "DoubleJump", "Air", SubResource("AnimationNodeStateMachineTransition_c217o")]
-graph_offset = Vector2(-285, 459.328)
+graph_offset = Vector2(-129, 267.328)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kx3ht"]
 animation = &"CrouchIdle"
@@ -1124,6 +1350,14 @@ parameters/Air/Attack/request = 0
 parameters/Air/LowerAnimations/blend_position = -1.0
 parameters/Air/UpperAndLower/add_amount = 1.0
 parameters/Air/UpperAnimations/blend_position = -1.0
+parameters/CrouchIdle/Attack/active = false
+parameters/CrouchIdle/Attack/internal_active = false
+parameters/CrouchIdle/Attack/request = 0
+parameters/CrouchIdle/UpperAndLower/add_amount = 1.0
+parameters/CrouchRun/Attack/active = false
+parameters/CrouchRun/Attack/internal_active = false
+parameters/CrouchRun/Attack/request = 0
+parameters/CrouchRun/UpperAndLower/add_amount = 1.0
 parameters/Dash/UpperAndLower/add_amount = 1.0
 parameters/DoubleJump/UpperAndLower/add_amount = 1.0
 parameters/Idle/Attack/active = false

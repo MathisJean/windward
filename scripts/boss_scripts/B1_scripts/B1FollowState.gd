@@ -9,9 +9,9 @@ func enter():
 	BossRef = get_tree().get_first_node_in_group("BossGroup")
 	$"../../SwordAnimationPlayer".play("idle_sword")
 	
-func FollowPlayer():
+func FollowPlayer():	
+	var DistanceToPlayer: float = PlayerRef.position.x - BossRef.position.x
 	
-	var DistanceToPlayer:float = PlayerRef.position.x - BossRef.position.x
 	if DistanceToPlayer >= 20:
 		BossRef.velocity.x  = DistanceToPlayer * Speed
 	elif DistanceToPlayer <= 20:

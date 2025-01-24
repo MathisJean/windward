@@ -6,29 +6,29 @@ func Enter():
 	if player.debug_mode == true:
 		print("Air")
 		
+	animation_tree.animation_mode.travel("Air")
+		
 func Physics_Update(delta: float):			
 	 #Animations
 	if !player.is_on_floor() and !player.IS_DOUBLE_JUMPING:
 		
+		#Attack Animation
+		if Input.is_action_just_pressed("primary_attack"):
+			animation_tree.set("parameters/Air/Attack/request", 1)
+		
+		#Air Animations
 		if abs(player.velocity.y) < 40:
-			animation_tree.animation_mode.travel("JumpMax")
+			animation_tree.set("parameters/Air/UpperAnimations/blend_position", 0)
+			animation_tree.set("parameters/Air/LowerAnimations/blend_position", 0)
 			
 		elif player.velocity.y < 0:
-			animation_tree.animation_mode.travel("JumpUp")
+			animation_tree.set("parameters/Air/UpperAnimations/blend_position", -1)
+			animation_tree.set("parameters/Air/LowerAnimations/blend_position", -1)
 			
 		elif player.velocity.y > 0:
-			animation_tree.animation_mode.travel("JumpDown")
+			animation_tree.set("parameters/Air/UpperAnimations/blend_position", 1)
+			animation_tree.set("parameters/Air/LowerAnimations/blend_position", 1)
 			
-	#Attack Animation
-	if Input.is_action_just_pressed("primary_attack"):
-		if abs(player.velocity.y) < 40:
-			animation_tree.set("parameters/JumpMax/Attack/request", 1)
-			
-		elif player.velocity.y < 0:
-			animation_tree.set("parameters/JumpUp/Attack/request", 1)
-			
-		elif player.velocity.y > 0:
-			animation_tree.set("parameters/JumpDown/Attack/request", 1)
 		
 	#X-Axis movement
 	Direction(true) #Function determines which way the player is looking and moving
@@ -112,5 +112,5 @@ func Physics_Update(delta: float):
 			
 func _on_animation_tree_animation_finished(anim_name: StringName):			
 	# When double jump animation is done
-	if anim_name == "DoubleJump":					
+	if anim_name == "double_jump_upper":							
 		player.IS_DOUBLE_JUMPING = false

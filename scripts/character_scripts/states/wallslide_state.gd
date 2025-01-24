@@ -27,11 +27,13 @@ func Physics_Update(_delta: float):
 	
 	#Determines the side the player slides on
 	if raycast_up_right.is_colliding():
-		player_sprite.flip_h = true
+		upper_sprite.flip_h = true
+		lower_sprite.flip_h = true
 		player.facing = -1
 		
 	elif raycast_up_left.is_colliding():
-		player_sprite.flip_h = false
+		upper_sprite.flip_h = false
+		lower_sprite.flip_h = false
 		player.facing = 1
 	
 	#---Exit WallSlide state---

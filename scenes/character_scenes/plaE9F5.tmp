@@ -1,4 +1,4 @@
-[gd_scene load_steps=138 format=3 uid="uid://d3bx3tabdk11c"]
+[gd_scene load_steps=151 format=3 uid="uid://d3bx3tabdk11c"]
 
 [ext_resource type="Script" path="res://scripts/character_scripts/player.gd" id="1_qnkkk"]
 [ext_resource type="Texture2D" uid="uid://bbbg1t74h00e" path="res://assets/character_assets/temps_asset_packs_spliced/player_sword_idle/player_sword_idle_lower.png" id="2_i8nnv"]
@@ -139,88 +139,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [8]
-}
-
-[sub_resource type="Animation" id="Animation_30aam"]
-resource_name = "dash_lower"
-length = 0.3
-step = 0.0333
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("player_lower_body:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 1, 2]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("player_lower_body:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("12_dq10b")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("player_lower_body:hframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [10]
-}
-
-[sub_resource type="Animation" id="Animation_s1u5s"]
-resource_name = "dash_upper"
-length = 0.3
-step = 0.0333
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("player_upper_body:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 1, 2]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("player_upper_body:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("7_bxich")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("player_upper_body:hframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [10]
 }
 
 [sub_resource type="Animation" id="Animation_1vg06"]
@@ -717,6 +635,88 @@ tracks/2/keys = {
 "values": [8]
 }
 
+[sub_resource type="Animation" id="Animation_s1u5s"]
+resource_name = "dash_upper"
+length = 0.3
+step = 0.0333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player_upper_body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("player_upper_body:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_bxich")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("player_upper_body:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
+}
+
+[sub_resource type="Animation" id="Animation_30aam"]
+resource_name = "dash_lower"
+length = 0.3
+step = 0.0333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player_lower_body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("player_lower_body:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("12_dq10b")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("player_lower_body:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7ywj2"]
 _data = {
 "RESET": SubResource("Animation_ug01x"),
@@ -737,8 +737,79 @@ _data = {
 "run_upper": SubResource("Animation_m7akd")
 }
 
+[sub_resource type="Animation" id="Animation_b3ajr"]
+resource_name = "CrouchIdle"
+length = 0.8
+loop_mode = 1
+step = 0.1
+
+[sub_resource type="Animation" id="Animation_23asw"]
+resource_name = "CrouchWalk"
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_o2mlb"]
+resource_name = "Dash"
+length = 0.2
+
+[sub_resource type="Animation" id="Animation_mrrl6"]
+resource_name = "DoubleJump"
+length = 0.6
+
+[sub_resource type="Animation" id="Animation_uxdto"]
+resource_name = "Idle"
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_3kr5y"]
+resource_name = "JumpDown"
+length = 0.1
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_w7ppx"]
+resource_name = "JumpMax"
+length = 0.1
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_53hon"]
+resource_name = "JumpUp"
+length = 0.1
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_x5nl7"]
+resource_name = "RESET"
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_2gae0"]
+resource_name = "Run"
+length = 0.8
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_yqiri"]
+resource_name = "WallSlide"
+length = 0.1
+loop_mode = 1
+step = 0.1
+
+[sub_resource type="Animation" id="Animation_u5y1n"]
+resource_name = "WallSlideLanding"
+length = 0.5
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sj0fi"]
+_data = {
+"CrouchIdle": SubResource("Animation_b3ajr"),
+"CrouchWalk": SubResource("Animation_23asw"),
+"Dash": SubResource("Animation_o2mlb"),
+"DoubleJump": SubResource("Animation_mrrl6"),
+"Idle": SubResource("Animation_uxdto"),
+"JumpDown": SubResource("Animation_3kr5y"),
+"JumpMax": SubResource("Animation_w7ppx"),
+"JumpUp": SubResource("Animation_53hon"),
+"RESET": SubResource("Animation_x5nl7"),
+"Run": SubResource("Animation_2gae0"),
+"WallSlide": SubResource("Animation_yqiri"),
+"WallSlideLanding": SubResource("Animation_u5y1n")
+}
+
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_bq8b7"]
-filters = ["player_lower_body:frame", "player_lower_body:hframes", "player_lower_body:texture", "player_upper_body:frame", "player_upper_body:hframes", "player_upper_body:texture"]
 sync = true
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hrt4h"]
@@ -841,6 +912,7 @@ nodes/UpperAnimation/position = Vector2(-140, 40)
 node_connections = [&"UpperAndLower", 0, &"UpperAnimation", &"UpperAndLower", 1, &"LowerAnimation", &"output", 0, &"UpperAndLower"]
 
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_4an3l"]
+filters = ["player_lower_body:frame", "player_lower_body:hframes", "player_lower_body:texture", "player_upper_body:frame", "player_upper_body:hframes", "player_upper_body:texture"]
 sync = true
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o6qhp"]
@@ -856,7 +928,7 @@ filters = ["player_lower_body:frame", "player_lower_body:hframes", "player_lower
 animation = &"idle_upper"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_fulgx"]
-graph_offset = Vector2(-183.867, 105.983)
+graph_offset = Vector2(-205.867, -90.017)
 nodes/Attack/node = SubResource("AnimationNodeOneShot_4an3l")
 nodes/Attack/position = Vector2(280, 140)
 nodes/AttackAnimation/node = SubResource("AnimationNodeAnimation_o6qhp")
@@ -971,7 +1043,7 @@ states/WallSlide/position = Vector2(-1, 633.328)
 states/WallSlideLanding/node = SubResource("AnimationNodeBlendTree_y4jth")
 states/WallSlideLanding/position = Vector2(0, 724.328)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_2ugx4"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_ru4n7"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_ijp1r"), "Idle", "End", SubResource("AnimationNodeStateMachineTransition_dnwtm"), "WallSlideLanding", "WallSlide", SubResource("AnimationNodeStateMachineTransition_5glne"), "WallSlide", "Idle", SubResource("AnimationNodeStateMachineTransition_mw4mf"), "Idle", "CrouchIdle", SubResource("AnimationNodeStateMachineTransition_4b31i"), "CrouchIdle", "Idle", SubResource("AnimationNodeStateMachineTransition_hf3ms"), "CrouchIdle", "CrouchRun", SubResource("AnimationNodeStateMachineTransition_1m8un"), "CrouchRun", "CrouchIdle", SubResource("AnimationNodeStateMachineTransition_7d838"), "CrouchRun", "Run", SubResource("AnimationNodeStateMachineTransition_cepvt"), "Run", "CrouchRun", SubResource("AnimationNodeStateMachineTransition_ww2hp"), "Idle", "Dash", SubResource("AnimationNodeStateMachineTransition_bdqgl"), "Dash", "Run", SubResource("AnimationNodeStateMachineTransition_ti2gb"), "Run", "Dash", SubResource("AnimationNodeStateMachineTransition_euohk"), "Dash", "Idle", SubResource("AnimationNodeStateMachineTransition_1bm6w"), "Idle", "Air", SubResource("AnimationNodeStateMachineTransition_pfkpy"), "Air", "Idle", SubResource("AnimationNodeStateMachineTransition_toikb"), "Air", "WallSlideLanding", SubResource("AnimationNodeStateMachineTransition_n8p8g"), "WallSlideLanding", "Air", SubResource("AnimationNodeStateMachineTransition_2w7ok"), "Air", "DoubleJump", SubResource("AnimationNodeStateMachineTransition_yh6v6"), "DoubleJump", "Air", SubResource("AnimationNodeStateMachineTransition_c217o")]
-graph_offset = Vector2(-285, 459.328)
+graph_offset = Vector2(-321, 509.328)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kx3ht"]
 animation = &"CrouchIdle"
@@ -1113,6 +1185,11 @@ frame = 4
 [node name="animation_player" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_7ywj2")
+}
+
+[node name="temp" type="AnimationPlayer" parent="."]
+libraries = {
+"temp": SubResource("AnimationLibrary_sj0fi")
 }
 
 [node name="animation_tree" type="AnimationTree" parent="."]

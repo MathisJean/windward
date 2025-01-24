@@ -5,7 +5,7 @@ class_name Player
 @export_category("Character Movement")
 @export var SPEED: int = 225
 @export var JUMP_HEIGHT: int = -350
-@export var DASH_SPEED_MULTIPLIER: float = 1.75
+@export var DASH_SPEED_MULTIPLIER: float = 2
 @export var WALLSLIDE_SPEED: float = 100
 @export var WALLSLIDE_JUMP: float = 225
 @export var CROUCH_SPEED_MULTIPLIER: float = 0.5
@@ -28,7 +28,8 @@ class_name Player
 @onready var root: Node2D = $".."
 @onready var coyote_time: Timer = $timers/coyote_time
 @onready var jump_cooldown: Timer = $timers/jump_cooldown
-@onready var player_sprite: Sprite2D = $player_sprite
+@onready var upper_sprite: Sprite2D = $player_upper_body
+@onready var lower_sprite: Sprite2D = $player_lower_body
 @onready var animation_tree: AnimationTree = $animation_tree
 @onready var interact_label: Label = $interactions/interaction_area/interact_label
 
@@ -65,8 +66,8 @@ func _process(_delta: float):
 	
 func _physics_process(_delta: float):	
 	#Get cursor position
-	cursor_pos = player_sprite.get_local_mouse_position()
-	global_cursor_pos = player_sprite.get_global_mouse_position()
+	cursor_pos = upper_sprite.get_local_mouse_position()
+	global_cursor_pos = upper_sprite.get_global_mouse_position()
 	
 	#Allows late jump press
 	if is_on_floor():

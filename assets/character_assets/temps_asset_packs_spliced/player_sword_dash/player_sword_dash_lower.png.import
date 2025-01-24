@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://w6fe8vpbug21"
-path="res://.godot/imported/dash.png-3016865f71c8ea8964fd92cd744c503e.ctex"
+uid="uid://37838ur401sb"
+path="res://.godot/imported/player_sword_dash_lower.png-ba0221e2062a9dffabec947ebebd25cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character_assets/temps_asset_packs_spliced/Asset Pack-V5/Dash/dash.png"
-dest_files=["res://.godot/imported/dash.png-3016865f71c8ea8964fd92cd744c503e.ctex"]
+source_file="res://assets/character_assets/temps_asset_packs_spliced/player_sword_dash/player_sword_dash_lower.png"
+dest_files=["res://.godot/imported/player_sword_dash_lower.png-ba0221e2062a9dffabec947ebebd25cc.ctex"]
 
 [params]
 

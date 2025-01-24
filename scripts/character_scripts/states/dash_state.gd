@@ -52,7 +52,7 @@ func Physics_Update(delta: float):
 
 func _on_animation_tree_animation_finished(anim_name: StringName):		
 	# When dash animation is done
-	if anim_name == "Dash":	
+	if anim_name == "dash_upper":	
 		player.IS_DASHING = false
 		
 		#Dash -> Air

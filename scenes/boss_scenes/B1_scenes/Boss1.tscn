@@ -1,0 +1,265 @@
+[gd_scene load_steps=18 format=3 uid="uid://7e88njjjcuj"]
+
+[ext_resource type="Texture2D" uid="uid://ms2r5je4vh3k" path="res://assets/boss_assets/boss_1_assets/boss_levitate.png" id="1_rsk3a"]
+[ext_resource type="Script" path="res://scripts/boss_scripts/B1_scripts/boss_1.gd" id="1_t0c1c"]
+[ext_resource type="Script" path="res://scripts/boss_scripts/B1_scripts/B1StateMachine.gd" id="1_tnrt2"]
+[ext_resource type="Texture2D" uid="uid://1a4tvjf5l0wd" path="res://assets/boss_assets/boss_1_assets/boos_chest.png" id="2_acow0"]
+[ext_resource type="Texture2D" uid="uid://b88mx4bsyvxhj" path="res://assets/boss_assets/boss_1_assets/B1head.png" id="3_l8n2a"]
+[ext_resource type="Script" path="res://scripts/boss_scripts/B1_scripts/B1FollowState.gd" id="5_crtv5"]
+[ext_resource type="Script" path="res://scenes/boss_scenes/B1_scenes/B1AttackState.gd" id="7_3ve3d"]
+[ext_resource type="PackedScene" uid="uid://cb41efo2kiusb" path="res://scenes/boss_scenes/B1_scenes/b_1_sword.tscn" id="8_456ir"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pvjpt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j1iq3"]
+
+[sub_resource type="Animation" id="Animation_17jqg"]
+resource_name = "Follow"
+length = 0.8835
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/BossLevitate:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.433333, 0.866667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 5), Vector2(0, 11.085), Vector2(0, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/BoosChest:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.433333, 0.866667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-1, -13), Vector2(-6, -12), Vector2(-1, -13)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/B1Head:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.433333, 0.866667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-2, -22), Vector2(-8, -19), Vector2(-2, -22)]
+}
+
+[sub_resource type="Animation" id="Animation_bhd6j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("B1Sword:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("B1Sword:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/BossLevitate:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprites/BoosChest:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, -13)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprites/B1Head:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2, -22)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vfsnp"]
+_data = {
+"Follow": SubResource("Animation_17jqg"),
+"RESET": SubResource("Animation_bhd6j")
+}
+
+[sub_resource type="Animation" id="Animation_4yxxe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("B1Sword:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("B1Sword:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ye7oe"]
+resource_name = "idle_sword"
+length = 1.3315
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("B1Sword:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.633333, 0.966667, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(32, -15), Vector2(62, -3), Vector2(32, -15), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_elc4q"]
+resource_name = "swing"
+length = 1.0605
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("B1Sword:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.533333, 0.766667, 0.833333, 0.933333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(18, -18), Vector2(18, -4), Vector2(-34, -13), Vector2(-34, -24), Vector2(-34, -27), Vector2(-33, -22)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("B1Sword:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.533333, 0.766667, 0.833333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.418879, 1.0472, -1.0472, -1.74533]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pj36q"]
+_data = {
+"RESET": SubResource("Animation_4yxxe"),
+"idle_sword": SubResource("Animation_ye7oe"),
+"swing": SubResource("Animation_elc4q")
+}
+
+[node name="Boss1" type="CharacterBody2D" groups=["BossGroup"]]
+script = ExtResource("1_t0c1c")
+
+[node name="AggroArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AggroArea"]
+position = Vector2(-5.96046e-08, -12)
+scale = Vector2(4.00727, -1.85746)
+shape = SubResource("RectangleShape2D_pvjpt")
+debug_color = Color(0.989945, 0, 0.284376, 0.42)
+
+[node name="B1Sword" parent="." instance=ExtResource("8_456ir")]
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="BossLevitate" type="Sprite2D" parent="Sprites"]
+position = Vector2(0, 5)
+texture = ExtResource("1_rsk3a")
+
+[node name="BoosChest" type="Sprite2D" parent="Sprites"]
+position = Vector2(-1, -13)
+texture = ExtResource("2_acow0")
+
+[node name="B1Head" type="Sprite2D" parent="Sprites"]
+position = Vector2(-2, -22)
+texture = ExtResource("3_l8n2a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -8)
+shape = SubResource("CapsuleShape2D_j1iq3")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("1_tnrt2")
+initial_state = NodePath("Follow")
+
+[node name="Follow" type="Node" parent="StateMachine"]
+script = ExtResource("5_crtv5")
+
+[node name="Attack" type="Node" parent="StateMachine"]
+script = ExtResource("7_3ve3d")
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="AttackCooldown" type="Timer" parent="Timers"]
+wait_time = 2.0
+one_shot = true
+
+[node name="B1AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vfsnp")
+}
+
+[node name="SwordAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pj36q")
+}
+autoplay = "idle_sword"
+
+[connection signal="body_entered" from="AggroArea" to="StateMachine/Follow" method="_on_aggro_area_body_entered"]
+[connection signal="body_exited" from="AggroArea" to="StateMachine/Attack" method="_on_aggro_area_body_exited"]
+[connection signal="timeout" from="Timers/AttackCooldown" to="StateMachine/Attack" method="_on_attack_cooldown_timeout"]

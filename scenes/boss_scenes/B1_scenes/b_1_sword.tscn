@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb41efo2kiusb"]
+
+[ext_resource type="Texture2D" uid="uid://dqxkcmhui3g0l" path="res://assets/boss_assets/boss_1_assets/sword.png" id="1_23gvj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2dcrc"]
+radius = 4.0
+height = 28.0
+
+[node name="B1Sword" type="Area2D"]
+
+[node name="Sword" type="Sprite2D" parent="."]
+position = Vector2(-34, -8)
+texture = ExtResource("1_23gvj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-34, -15)
+shape = SubResource("CapsuleShape2D_2dcrc")
+debug_color = Color(0.974881, 0.119013, 0.269107, 0.42)

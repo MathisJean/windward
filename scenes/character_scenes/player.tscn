@@ -1376,7 +1376,6 @@ tree_root = SubResource("AnimationNodeStateMachine_hnlm6")
 [node name="player_collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -13)
 shape = SubResource("CapsuleShape2D_fbyph")
-debug_color = Color(0.856603, 0, 0.198655, 0.42)
 
 [node name="interactions" type="Node2D" parent="."]
 
@@ -1388,7 +1387,6 @@ monitorable = false
 [node name="interaction_collision" type="CollisionShape2D" parent="interactions/interaction_area"]
 position = Vector2(0, -16)
 shape = SubResource("CircleShape2D_5ucc5")
-debug_color = Color(0, 0.6, 0.701961, 0.164706)
 
 [node name="interact_label" type="Label" parent="interactions/interaction_area"]
 texture_filter = 1

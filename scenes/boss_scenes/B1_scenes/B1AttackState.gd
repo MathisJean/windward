@@ -45,3 +45,4 @@ func _on_attack_cooldown_timeout():
 func _on_b_1_sword_body_entered(body):
 	if body.is_in_group("PlayerGroup") and can_attack == false:
 		GlobalScript.PlayerTakeDmg()
+		

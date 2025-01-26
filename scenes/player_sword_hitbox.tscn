@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqw1q6qcih5cq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3lxx3"]
+radius = 8.9996
+height = 34.0174
+
+[node name="PlayerSwordHitbox" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+rotation = 1.56135
+scale = Vector2(1.35998, 1.80223)
+shape = SubResource("CapsuleShape2D_3lxx3")
+debug_color = Color(0, 0.649188, 0.153819, 0.42)

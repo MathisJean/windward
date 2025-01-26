@@ -33,6 +33,8 @@ class_name Player
 @onready var animation_tree: AnimationTree = $animation_tree
 @onready var interact_label: Label = $interactions/interaction_area/interact_label
 
+@onready var sword_hitbox = $PlayerSwordHitbox
+
 #Variables
 var debug_mode: bool = false
 var facing: int = 1
@@ -53,6 +55,8 @@ func _ready():
 		
 	#Set animation tree to active
 	animation_tree.set_active(true)
+	#makes it so the area 2d isnt active while the player isnt attacking
+	sword_hitbox.set_deferred("monitoring", false)
 	
 func _process(_delta: float):				
 		

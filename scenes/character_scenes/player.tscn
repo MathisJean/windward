@@ -1,4 +1,4 @@
-[gd_scene load_steps=156 format=3 uid="uid://d3bx3tabdk11c"]
+[gd_scene load_steps=173 format=3 uid="uid://d3bx3tabdk11c"]
 
 [ext_resource type="Script" path="res://scripts/character_scripts/player.gd" id="1_qnkkk"]
 [ext_resource type="Texture2D" uid="uid://bbbg1t74h00e" path="res://assets/character_assets/temps_asset_packs_spliced/player_sword_idle/player_sword_idle_lower.png" id="2_i8nnv"]
@@ -19,8 +19,11 @@
 [ext_resource type="Texture2D" uid="uid://dvu3m3orygmtt" path="res://assets/character_assets/temps_asset_packs_spliced/player_sword_run/player_sword_run_lower.png" id="17_uog4k"]
 [ext_resource type="Script" path="res://scripts/character_scripts/states/state_machine.gd" id="25_yqogn"]
 [ext_resource type="Script" path="res://scripts/character_scripts/states/idle_state.gd" id="26_cpcjb"]
+[ext_resource type="Script" path="res://scripts/character_scripts/states/primary_attack_state.gd" id="27_73i8g"]
 [ext_resource type="Script" path="res://scripts/character_scripts/states/run_state.gd" id="27_i6672"]
 [ext_resource type="Script" path="res://scripts/character_scripts/states/air_state.gd" id="28_605b8"]
+[ext_resource type="PackedScene" uid="uid://dqw1q6qcih5cq" path="res://scenes/player_sword_hitbox.tscn" id="28_ymwy1"]
+[ext_resource type="Texture2D" uid="uid://bwji4pf6ex6wf" path="res://assets/character_assets/swing_v3.png" id="29_0qhor"]
 [ext_resource type="Script" path="res://scripts/character_scripts/states/jump_state.gd" id="29_irksh"]
 [ext_resource type="Script" path="res://scripts/character_scripts/states/wallslide_state.gd" id="30_dcqdk"]
 [ext_resource type="Script" path="res://scripts/character_scripts/states/dash_state.gd" id="32_f1o7g"]
@@ -1197,7 +1200,7 @@ states/WallSlide/position = Vector2(-1, 633.328)
 states/WallSlideLanding/node = SubResource("AnimationNodeBlendTree_y4jth")
 states/WallSlideLanding/position = Vector2(0, 724.328)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_2ugx4"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_ru4n7"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_ijp1r"), "Idle", "End", SubResource("AnimationNodeStateMachineTransition_dnwtm"), "WallSlideLanding", "WallSlide", SubResource("AnimationNodeStateMachineTransition_5glne"), "WallSlide", "Idle", SubResource("AnimationNodeStateMachineTransition_mw4mf"), "Idle", "CrouchIdle", SubResource("AnimationNodeStateMachineTransition_4b31i"), "CrouchIdle", "Idle", SubResource("AnimationNodeStateMachineTransition_hf3ms"), "CrouchIdle", "CrouchRun", SubResource("AnimationNodeStateMachineTransition_1m8un"), "CrouchRun", "CrouchIdle", SubResource("AnimationNodeStateMachineTransition_7d838"), "CrouchRun", "Run", SubResource("AnimationNodeStateMachineTransition_cepvt"), "Run", "CrouchRun", SubResource("AnimationNodeStateMachineTransition_ww2hp"), "Idle", "Dash", SubResource("AnimationNodeStateMachineTransition_bdqgl"), "Dash", "Run", SubResource("AnimationNodeStateMachineTransition_ti2gb"), "Run", "Dash", SubResource("AnimationNodeStateMachineTransition_euohk"), "Dash", "Idle", SubResource("AnimationNodeStateMachineTransition_1bm6w"), "Idle", "Air", SubResource("AnimationNodeStateMachineTransition_pfkpy"), "Air", "Idle", SubResource("AnimationNodeStateMachineTransition_toikb"), "Air", "WallSlideLanding", SubResource("AnimationNodeStateMachineTransition_n8p8g"), "WallSlideLanding", "Air", SubResource("AnimationNodeStateMachineTransition_2w7ok"), "Air", "DoubleJump", SubResource("AnimationNodeStateMachineTransition_yh6v6"), "DoubleJump", "Air", SubResource("AnimationNodeStateMachineTransition_c217o")]
-graph_offset = Vector2(-129, 267.328)
+graph_offset = Vector2(-299, 208.328)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kx3ht"]
 animation = &"CrouchIdle"
@@ -1315,6 +1318,105 @@ height = 26.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5ucc5"]
 radius = 24.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdt6g"]
+atlas = ExtResource("29_0qhor")
+region = Rect2(0, 0, 64, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsyhf"]
+atlas = ExtResource("29_0qhor")
+region = Rect2(64, 0, 64, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkhn6"]
+atlas = ExtResource("29_0qhor")
+region = Rect2(128, 0, 64, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjk5d"]
+atlas = ExtResource("29_0qhor")
+region = Rect2(192, 0, 64, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11s8w"]
+atlas = ExtResource("29_0qhor")
+region = Rect2(256, 0, 64, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1l2x"]
+atlas = ExtResource("29_0qhor")
+region = Rect2(320, 0, 64, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1cdu"]
+atlas = ExtResource("29_0qhor")
+region = Rect2(384, 0, 64, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eyuto"]
+atlas = ExtResource("29_0qhor")
+region = Rect2(448, 0, 64, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j74ph"]
+atlas = ExtResource("29_0qhor")
+region = Rect2(512, 0, 64, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08nku"]
+atlas = ExtResource("29_0qhor")
+region = Rect2(576, 0, 64, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6dv4"]
+atlas = ExtResource("29_0qhor")
+region = Rect2(640, 0, 64, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yydg"]
+atlas = ExtResource("29_0qhor")
+region = Rect2(704, 0, 64, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2s4br"]
+atlas = ExtResource("29_0qhor")
+region = Rect2(832, 0, 64, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pyv86"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdt6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fsyhf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkhn6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjk5d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11s8w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1l2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j1cdu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eyuto")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j74ph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08nku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6dv4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2yydg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2s4br")
+}],
+"loop": false,
+"name": &"swing",
+"speed": 28.0
+}]
 
 [node name="player" type="CharacterBody2D"]
 collision_layer = 2
@@ -1439,6 +1541,10 @@ one_shot = true
 wait_time = 0.5
 one_shot = true
 
+[node name="attack_cooldown" type="Timer" parent="timers"]
+wait_time = 0.3
+one_shot = true
+
 [node name="state_machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("25_yqogn")
 initial_state = NodePath("idle")
@@ -1547,8 +1653,32 @@ raycast_down_left = NodePath("../../raycasts/raycast_down/raycast_down_left")
 coyote_time = NodePath("../../timers/coyote_time")
 jump_cooldown = NodePath("../../timers/jump_cooldown")
 
+[node name="primary_attack" type="Node" parent="state_machine" node_paths=PackedStringArray("player", "upper_sprite", "lower_sprite", "animation_tree", "raycast_up_right", "raycast_up_left", "raycast_down_right", "raycast_down_left", "coyote_time", "jump_cooldown")]
+script = ExtResource("27_73i8g")
+player = NodePath("../..")
+upper_sprite = NodePath("../../player_upper_body")
+lower_sprite = NodePath("../../player_lower_body")
+animation_tree = NodePath("../../animation_tree")
+raycast_up_right = NodePath("../../raycasts/raycast_up/raycast_up_right")
+raycast_up_left = NodePath("../../raycasts/raycast_up/raycast_up_left")
+raycast_down_right = NodePath("../../raycasts/raycast_down/raycast_down_right")
+raycast_down_left = NodePath("../../raycasts/raycast_down/raycast_down_left")
+coyote_time = NodePath("../../timers/coyote_time")
+jump_cooldown = NodePath("../../timers/jump_cooldown")
+
 [node name="cursor" type="Node" parent="."]
 script = ExtResource("38_fc2ft")
+
+[node name="PlayerSwordHitbox" parent="." instance=ExtResource("28_ymwy1")]
+position = Vector2(43, -15)
+
+[node name="swingAnim" type="AnimatedSprite2D" parent="PlayerSwordHitbox"]
+self_modulate = Color(1, 0.819608, 0.235294, 1)
+rotation = -0.507847
+sprite_frames = SubResource("SpriteFrames_pyv86")
+animation = &"swing"
+frame = 12
+frame_progress = 1.0
 
 [connection signal="animation_finished" from="animation_tree" to="state_machine/air" method="_on_animation_tree_animation_finished"]
 [connection signal="animation_finished" from="animation_tree" to="state_machine/wallslide" method="_on_animation_tree_animation_finished"]
@@ -1558,3 +1688,5 @@ script = ExtResource("38_fc2ft")
 [connection signal="animation_finished" from="temps" to="state_machine/dash" method="_on_animation_tree_animation_finished"]
 [connection signal="area_entered" from="interactions/interaction_area" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="interactions/interaction_area" to="." method="_on_area_2d_area_exited"]
+[connection signal="timeout" from="timers/attack_cooldown" to="state_machine/primary_attack" method="_on_attack_cooldown_timeout"]
+[connection signal="body_entered" from="PlayerSwordHitbox" to="state_machine/primary_attack" method="_on_player_sword_hitbox_body_entered"]

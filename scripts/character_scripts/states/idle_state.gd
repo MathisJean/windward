@@ -37,7 +37,9 @@ func Physics_Update(_delta: float):
 	#Idle -> Crouch Idle
 	elif Input.is_action_pressed("crouch"):
 		StateTransition.emit(self, "Crouch_Idle")	
-		
+	#Idle -> primiary attack
+	elif Input.is_action_just_pressed("primary_attack"):
+		StateTransition.emit(self, "Primary_Attack")
 	#Idle -> Run
 	elif direction != 0:
 		StateTransition.emit(self, "Run")		

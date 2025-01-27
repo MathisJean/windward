@@ -2,13 +2,16 @@ extends Node
 #gonna debug player and boss health in this to avoid headache
 #should change it later on
 
+var PlayerHealth = 100.0
+var B1Health = 100.0
+var PlayerDmg = 5.0
+var B1Dmg = 10.0
+var PlayerInvincible = false
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func PlayerTakeDmg():
+	PlayerHealth -= B1Dmg
+		
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func B1TakeDmg():
+	B1Health -= PlayerDmg

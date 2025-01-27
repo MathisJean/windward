@@ -1,4 +1,4 @@
-[gd_scene load_steps=166 format=3 uid="uid://d3bx3tabdk11c"]
+[gd_scene load_steps=169 format=3 uid="uid://d3bx3tabdk11c"]
 
 [ext_resource type="Script" path="res://scripts/character_scripts/player.gd" id="1_qnkkk"]
 [ext_resource type="Texture2D" uid="uid://bbbg1t74h00e" path="res://assets/character_assets/temps_asset_packs_spliced/player_sword_idle/player_sword_idle_lower.png" id="2_i8nnv"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://d0gd5awbh2fc1" path="res://assets/character_assets/temps_asset_packs_spliced/player_sword_wallslide/player_sword_wallslide_lower.png" id="17_27oy2"]
 [ext_resource type="Texture2D" uid="uid://dvu3m3orygmtt" path="res://assets/character_assets/temps_asset_packs_spliced/player_sword_run/player_sword_run_lower.png" id="17_uog4k"]
 [ext_resource type="Texture2D" uid="uid://bbuxurohkbwdj" path="res://assets/character_assets/temps_asset_packs_spliced/player_sword_wallslide/player_sword_wallslide_upper.png" id="17_xr1a2"]
+[ext_resource type="Texture2D" uid="uid://c7wjabfurd0ok" path="res://assets/character_assets/temps_asset_packs_spliced/player_sword_wall_land/player_sword_wall_land_lower.png" id="19_ailhi"]
 [ext_resource type="Script" path="res://scripts/character_scripts/states/state_machine.gd" id="25_yqogn"]
 [ext_resource type="Script" path="res://scripts/character_scripts/states/idle_state.gd" id="26_cpcjb"]
 [ext_resource type="Script" path="res://scripts/character_scripts/states/run_state.gd" id="27_i6672"]
@@ -887,48 +888,6 @@ tracks/2/keys = {
 "values": [8]
 }
 
-[sub_resource type="Animation" id="Animation_htegj"]
-resource_name = "wallslide_upper"
-length = 0.1
-loop_mode = 1
-step = 0.0333
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("player_upper_body:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("player_upper_body:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("17_xr1a2")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("player_upper_body:hframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [3]
-}
-
 [sub_resource type="Animation" id="Animation_8d8c1"]
 resource_name = "wallslide_lower"
 length = 0.1
@@ -971,6 +930,132 @@ tracks/2/keys = {
 "values": [3]
 }
 
+[sub_resource type="Animation" id="Animation_htegj"]
+resource_name = "wallslide_upper"
+length = 0.1
+loop_mode = 1
+step = 0.0333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player_upper_body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("player_upper_body:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("17_xr1a2")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("player_upper_body:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_2wc42"]
+resource_name = "wall_land_lower"
+length = 0.6
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player_lower_body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 1, 1, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("player_lower_body:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("19_ailhi")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("player_lower_body:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_b0y2s"]
+resource_name = "wall_land_upper"
+length = 0.1
+loop_mode = 1
+step = 0.0333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player_upper_body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("player_upper_body:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("17_xr1a2")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("player_upper_body:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7ywj2"]
 _data = {
 "RESET": SubResource("Animation_ug01x"),
@@ -993,6 +1078,8 @@ _data = {
 "jump_up_upper": SubResource("Animation_ecv32"),
 "run_lower": SubResource("Animation_0r3py"),
 "run_upper": SubResource("Animation_m7akd"),
+"wall_land_lower": SubResource("Animation_2wc42"),
+"wall_land_upper": SubResource("Animation_b0y2s"),
 "wallslide_lower": SubResource("Animation_8d8c1"),
 "wallslide_upper": SubResource("Animation_htegj")
 }
@@ -1223,7 +1310,7 @@ filters = ["player_lower_body:frame", "player_lower_body:hframes", "player_lower
 animation = &"wallslide_upper"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_vprue"]
-graph_offset = Vector2(-209, -91)
+graph_offset = Vector2(-230, -18)
 nodes/LowerAnimation/node = SubResource("AnimationNodeAnimation_tovij")
 nodes/LowerAnimation/position = Vector2(-140, 200)
 nodes/UpperAndLower/node = SubResource("AnimationNodeAdd2_o7msl")
@@ -1240,7 +1327,7 @@ filters = ["player_lower_body:frame", "player_lower_body:hframes", "player_lower
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2ylch"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_y4jth"]
-graph_offset = Vector2(-550.758, 5.3801)
+graph_offset = Vector2(-360.174, -19.0744)
 nodes/LowerAnimation/node = SubResource("AnimationNodeAnimation_coj7r")
 nodes/LowerAnimation/position = Vector2(-100, 200)
 nodes/UpperAndLower/node = SubResource("AnimationNodeAdd2_6g27y")
@@ -1454,7 +1541,7 @@ texture_filter = 1
 position = Vector2(0, -16)
 texture = ExtResource("3_u0wdv")
 hframes = 10
-frame = 1
+frame = 4
 
 [node name="animation_player" type="AnimationPlayer" parent="."]
 libraries = {

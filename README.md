@@ -4,6 +4,7 @@ A short wind-based platformer built in Godot. The player uses an umbrella to cat
 
 ![Godot](https://img.shields.io/badge/Godot-478CBF?style=flat-square&logo=godotengine&logoColor=white)
 ![GDScript](https://img.shields.io/badge/GDScript-478CBF?style=flat-square)
+![Public](https://img.shields.io/badge/repo-public-green?style=flat-square)
 
 ---
 
